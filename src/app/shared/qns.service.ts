@@ -18,4 +18,10 @@ export class QnsService {
           opnD: new FormControl(''),
           ans: new FormControl('')
   });
+
+  insQns(data){
+    return new Promise<any>(( resolve, reject) => {
+      this.firestore.collection("qns").add(data).then( res => {}, err => reject(err) );
+    });
+  }
 }
