@@ -1,0 +1,14 @@
+
+<form [formGroup]="this.qnsService.form">
+
+  <input type='text' placeholder="Question" formControlName="qn" />
+  <input type='text' placeholder="Option A" formControlName="opnA" />
+  <input type='text' placeholder="Option B" formControlName="opnB" />
+  <input type='text' placeholder="Option C" formControlName="opnC" />
+  <input type='text' placeholder="Option D" formControlName="opnD" />
+  <input type='text' placeholder="Answer" formControlName="ans" />
+  <button class='waves-effect waves-light btn col s12' (click)='onSubmit()'>
+    Add Question
+  </button>
+
+</form>
