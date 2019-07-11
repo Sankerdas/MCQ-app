@@ -9,11 +9,8 @@ import { QnsService } from '../shared/qns.service';
 export class AddQnsComponent implements OnInit {
 
   onSubmit() {
-    let data = this.qnsService.form.value; // get form values
-    this.qnsService.addQns(data).then(res => {
-      console.log('Form Submitted!');
-      this.qnsService.form.reset();
-    });
+    const data: any = this.qnsService.form.value; // get form values
+    this.qnsService.addQns(data).then(res => {    });
   }
 
   constructor( private qnsService: QnsService ) { }

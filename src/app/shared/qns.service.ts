@@ -33,4 +33,8 @@ export class QnsService {
     });
 }
 
+  getQns() {
+    return this.firestore.collection('qns').snapshotChanges();
+  }
+
 }
