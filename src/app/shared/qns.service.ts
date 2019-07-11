@@ -8,7 +8,9 @@ import { AngularFirestore } from '@angular/fire/firestore';
 })
 export class QnsService {
 
-  constructor( private firestore: AngularFirestore) { }
+  constructor( private firestore: AngularFirestore) {
+   }
+
 
   form = new FormGroup({
           qn: new FormControl(''),
@@ -18,4 +20,14 @@ export class QnsService {
           opnD: new FormControl(''),
           ans: new FormControl('')
   });
+
+  addQns(data) {
+    return new Promise<any>((resolve, reject) => {
+        this.firestore
+            .collection('qns')
+            .add(data)
+            .then(res => {}, err => reject(err));
+    });
+}
+
 }
