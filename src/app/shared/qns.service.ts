@@ -26,7 +26,10 @@ export class QnsService {
         this.firestore
             .collection('qns')
             .add(data)
-            .then(res => {}, err => reject(err));
+            .then(res => {
+                console.log('Form Submitted!');
+                this.form.reset(res);
+             }, err => reject(err));
     });
 }
 
