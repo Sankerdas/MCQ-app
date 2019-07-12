@@ -1,5 +1,16 @@
+<table class="highlight" >
 <tbody>
-  <tr *ngFor='let qns of qnsList'>
+  <tr>
+  <th>SL.No</th> 
+  <th>Question</th>
+  <th>Option A</th>
+  <th>Option B</th>
+  <th>Option C</th>
+  <th>Option D</th>
+  <th>Answer</th>
+  </tr>
+  <tr *ngFor='let qns of qnsList;  let i = index'>
+    <td>{{i}}</td>
     <td>{{qns.payload.doc.data().qn}}</td>
     <td>{{qns.payload.doc.data().opnA}}</td>
     <td>{{qns.payload.doc.data().opnB}}</td>
@@ -8,3 +19,4 @@
     <td>{{qns.payload.doc.data().ans}}</td>
   </tr>
 </tbody>
+</table>

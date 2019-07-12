@@ -1,12 +1,48 @@
 
 <form [formGroup]="this.qnsService.form">
 
-  <input type='text' placeholder="Question" formControlName="qn" />
-  <input type='text' placeholder="Option A" formControlName="opnA" />
-  <input type='text' placeholder="Option B" formControlName="opnB" />
-  <input type='text' placeholder="Option C" formControlName="opnC" />
-  <input type='text' placeholder="Option D" formControlName="opnD" />
-  <input type='text' placeholder="Answer" formControlName="ans" />
+  <div class="input-field col s12">
+    <input type='text' formControlName="qn" id='qn' class="validate" />
+    <label for="qn">Question</label>
+  </div>
+
+  <div class="input-field col s12">
+    <input type='text'  formControlName="opnA" id='opnA' class="validate" />
+    <label for="opnA">Option A</label>
+  </div>
+
+  <div class="input-field col s12">
+    <input type='text'  formControlName="opnB" id='opnB' class="validate" />
+    <label for="opnB">Option B</label>
+  </div>
+
+  <div class="input-field col s12">
+    <input type='text'  formControlName="opnC" id='opnC' class="validate" />
+    <label for="opnC">Option C</label>
+  </div>
+
+  <div class="input-field col s12">
+    <input type='text'  formControlName="opnD" id='opnD' class="validate" />
+    <label for="opnD">Question D</label>
+  </div>
+
+  <div class="input-field col s12">
+    <input type='text' formControlName="ans" id='ans' class="validate" />
+    
+    <label for="ans">Answer</label>
+    <label>
+        <input name="group1" formControlName="ans" type="radio" />
+        <span>Red</span>
+      </label>
+      <label>
+        <input name="group1" formControlName="ans" type="radio" />
+        <span>Yellow</span>
+      </label>
+  </div>
+
+
+
+
   <button class='waves-effect waves-light btn col s12' (click)='onSubmit()'>
     Add Question
   </button>

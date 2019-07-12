@@ -21,24 +21,6 @@ export class QnsService {
           ans: new FormControl('')
   });
 
-<<<<<<< HEAD
-  addQns(data) {
-    return new Promise<any>((resolve, reject) => {
-        this.firestore
-            .collection('qns')
-            .add(data)
-            .then(res => {
-                console.log('Form Submitted!');
-                this.form.reset(res);
-             }, err => reject(err));
-    });
-}
-
-  getQns() {
-    return this.firestore.collection('qns').snapshotChanges();
-  }
-
-=======
   insQns(data) { // promise funtion or insert
     return new Promise<any>(( resolve, reject) => {
       this.firestore.collection('qns').add(data).then( res => {
@@ -51,5 +33,4 @@ export class QnsService {
   getQns() { // observable
     return this.firestore.collection('qns').snapshotChanges();
   }
->>>>>>> 3c9e13d9c846d28b5649202a93de956847856d18
 }
