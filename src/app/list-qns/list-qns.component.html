@@ -1,3 +1,10 @@
-<p>
-  list-qns works!
-</p>
+<tbody>
+  <tr *ngFor='let qns of qnsList'>
+    <td>{{qns.payload.doc.data().qn}}</td>
+    <td>{{qns.payload.doc.data().opnA}}</td>
+    <td>{{qns.payload.doc.data().opnB}}</td>
+    <td>{{qns.payload.doc.data().opnC}}</td>
+    <td>{{qns.payload.doc.data().opnD}}</td>
+    <td>{{qns.payload.doc.data().ans}}</td>
+  </tr>
+</tbody>

@@ -9,8 +9,13 @@ import { QnsService } from '../shared/qns.service';
 export class AddQnsComponent implements OnInit {
 
   onSubmit() {
+<<<<<<< HEAD
     const data: any = this.qnsService.form.value; // get form values
     this.qnsService.addQns(data).then(res => {    });
+=======
+    const data = this.qnsService.form.value;
+    this.qnsService.insQns(data);
+>>>>>>> 3c9e13d9c846d28b5649202a93de956847856d18
   }
 
   constructor( private qnsService: QnsService ) { }

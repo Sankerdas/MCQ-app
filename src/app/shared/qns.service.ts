@@ -21,6 +21,7 @@ export class QnsService {
           ans: new FormControl('')
   });
 
+<<<<<<< HEAD
   addQns(data) {
     return new Promise<any>((resolve, reject) => {
         this.firestore
@@ -37,4 +38,18 @@ export class QnsService {
     return this.firestore.collection('qns').snapshotChanges();
   }
 
+=======
+  insQns(data) { // promise funtion or insert
+    return new Promise<any>(( resolve, reject) => {
+      this.firestore.collection('qns').add(data).then( res => {
+        console.log('From data inserted to firebase');
+        this.form.reset();
+      }, err => reject(err) );
+    });
+  }
+
+  getQns() { // observable
+    return this.firestore.collection('qns').snapshotChanges();
+  }
+>>>>>>> 3c9e13d9c846d28b5649202a93de956847856d18
 }

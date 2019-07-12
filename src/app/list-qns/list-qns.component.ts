@@ -10,7 +10,12 @@ export class ListQnsComponent implements OnInit {
 
   constructor( private qnsService: QnsService) { }
 
-  ngOnInit() {
+  qnsList: any;
+
+  getQnsList = () => { // subsribe to get value
+  this.qnsService.getQns().subscribe( res => (this.qnsList = res) );
   }
+
+  ngOnInit() {this.getQnsList(); }
 
 }
