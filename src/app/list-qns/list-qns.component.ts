@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { QnsService } from '../shared/qns.service';
 
 @Component({
   selector: 'app-list-qns',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListQnsComponent implements OnInit {
 
-  constructor() { }
+  constructor( private qnsService: QnsService) { }
 
-  ngOnInit() {
+  qnsList: any;
+
+  getQnsList = () => { // subsribe to get value
+  this.qnsService.getQns().subscribe( res => (this.qnsList = res) );
   }
+
+  ngOnInit() {this.getQnsList(); }
 
 }
