@@ -16,6 +16,11 @@ export class ListQnsComponent implements OnInit {
   this.qnsService.getQns().subscribe( res => (this.qnsList = res) );
   }
 
-  ngOnInit() {this.getQnsList(); }
+  deleteQnRow = (data) => {
+    this.qnsService.deleteQn(data);
+    console.log('Deleted from firebase');
+  }
+
+  ngOnInit() { this.getQnsList(); }
 
 }

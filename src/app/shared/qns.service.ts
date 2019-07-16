@@ -21,10 +21,11 @@ export class QnsService {
           ans: new FormControl('')
   });
 
-  insQns(data) { // promise funtion or insert
+  // insert
+  insQns(data) { // promise funtion - this is triggerd after some function
     return new Promise<any>(( resolve, reject) => {
       this.firestore.collection('qns').add(data).then( res => {
-        console.log('From data inserted to firebase');
+        console.log('inserted to firebase ' + data.qn );
         this.form.reset();
       }, err => reject(err) );
     });
@@ -33,4 +34,10 @@ export class QnsService {
   getQns() { // observable
     return this.firestore.collection('qns').snapshotChanges();
   }
+
+  deleteQn(data) {
+    this.firestore.collection('qns').doc(data.payload.doc.id).delete();
+    console.log('Deleted from firebasezzzz');
+  }
+
 }

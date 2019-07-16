@@ -1,7 +1,7 @@
 <table class="highlight" >
 <tbody>
   <tr>
-  <th>SL.No</th> 
+  <th>SL.No</th>
   <th>Question</th>
   <th>Option A</th>
   <th>Option B</th>
@@ -9,7 +9,7 @@
   <th>Option D</th>
   <th>Answer</th>
   </tr>
-  <tr *ngFor='let qns of qnsList;  let i = index'>
+  <tr *ngFor='let qns of qnsList;  let i = index;'>
     <td>{{i}}</td>
     <td>{{qns.payload.doc.data().qn}}</td>
     <td>{{qns.payload.doc.data().opnA}}</td>
@@ -17,6 +17,9 @@
     <td>{{qns.payload.doc.data().opnC}}</td>
     <td>{{qns.payload.doc.data().opnD}}</td>
     <td>{{qns.payload.doc.data().ans}}</td>
+    <td>
+    <i (click)='deleteQnRow(qns)' class="material-icons">delete_forever</i>
+    </td>
   </tr>
 </tbody>
 </table>
