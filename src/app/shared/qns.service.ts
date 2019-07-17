@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { FormControlName, FormGroup, FormControl } from '@angular/forms';
+import { FormControlName, FormGroup, FormControl, FormBuilder, FormArray } from '@angular/forms';
 import { AngularFirestore } from '@angular/fire/firestore';
 
 
@@ -8,18 +8,29 @@ import { AngularFirestore } from '@angular/fire/firestore';
 })
 export class QnsService {
 
-  constructor( private firestore: AngularFirestore) {
+  constructor( private firestore: AngularFirestore, private formbuilder: FormBuilder) {
    }
 
 
-  form = new FormGroup({
-          qn: new FormControl(''),
-          opnA: new FormControl(''),
-          opnB: new FormControl(''),
-          opnC: new FormControl(''),
-          opnD: new FormControl(''),
-          ans: new FormControl('')
-  });
+  // form = new FormGroup({
+  //         qn: new FormControl(''),
+  //         opnA: new FormControl(''),
+  //         opnB: new FormControl(''),
+  //         opnC: new FormControl(''),
+  //         opnD: new FormControl(''),
+  //         ans: new FormControl('')
+  // });
+
+  // this is like schema
+   form: FormGroup = this.formbuilder.group({
+     qn: '',
+     opnA: '',
+     opnB: '',
+     opnC: '',
+     opnD: '',
+     ans: ''
+   });
+
 
   // insert
   insQns(data) { // promise funtion - this is triggerd after some function
