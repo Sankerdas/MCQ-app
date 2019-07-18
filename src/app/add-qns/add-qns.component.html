@@ -1,10 +1,12 @@
 
-<form [formGroup]="this.qnsService.form">
+<form [formGroup]="this.qnsService.form" (ngSubmit)='onSubmit()'>
 
   <div class="input-field col s12">
     <input type='text' formControlName="qn" id='qn' class="validate" />
     <label for="qn">Question</label>
   </div>
+
+  <div formGroupName="this.qnsService.data" >
 
   <div class="input-field col s12">
     <input type='text'  formControlName="opnA" id='opnA' class="validate" />
@@ -27,14 +29,13 @@
   </div>
 
   <div class="input-field col s12">
-    <input type='text' formControlName="ans" id='ans' class="validate" />
+    <input type='text' formControlName="ans" id='ans' class="validate"  />
     <label for="ans">Answer</label>
   </div>
+  
+  </div>
 
-
-
-
-  <button class='waves-effect waves-light btn col s12' (click)='onSubmit()'>
+  <button class='waves-effect waves-light btn col s12' >
     Add Question
   </button>
 

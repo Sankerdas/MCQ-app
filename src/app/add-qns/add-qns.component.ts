@@ -16,6 +16,7 @@ export class AddQnsComponent implements OnInit {
   constructor( private qnsService: QnsService ) { }
 
   ngOnInit() {
+    this.qnsService.form.valueChanges.subscribe(console.log); // log the form input
   }
 
 }
