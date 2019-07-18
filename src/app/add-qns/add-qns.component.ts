@@ -13,10 +13,10 @@ export class AddQnsComponent implements OnInit {
     this.qnsService.insQns(data);
   }
 
-  constructor( private qnsService: QnsService ) { }
+  constructor( public qnsService: QnsService ) { }
 
   ngOnInit() {
-    this.qnsService.form.valueChanges.subscribe(console.log); // log the form input
+    /// this.qnsService.form.valueChanges.subscribe(console.log); // log the form input
   }
 
 }

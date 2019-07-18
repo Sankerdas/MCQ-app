@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { FormControlName, FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder } from '@angular/forms';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { formatNumber } from '@angular/common';
 
@@ -12,25 +12,14 @@ export class QnsService {
   constructor( private firestore: AngularFirestore, private formbuilder: FormBuilder) {
    }
 
-
-  // form = new FormGroup({
-  //         qn: new FormControl(''),
-  //         opnA: new FormControl(''),
-  //         opnB: new FormControl(''),
-  //         opnC: new FormControl(''),
-  //         opnD: new FormControl(''),
-  //         ans: new FormControl('')
-  // });
-
   // this is like db schema
   form: FormGroup = this.formbuilder.group({
-    qn: ['', Validators.required],
-    data: this.formbuilder.group({
+    qn: '',
     opnA: '',
     opnB: '',
     opnC: '',
     opnD: '',
-    ans: '' })
+    ans: ''
   });
 
 
