@@ -1,6 +1,13 @@
-<div class="container">
+<div class="container-fluid">
   <div class="row">
-      <app-add-qns class="col s6"></app-add-qns>
-      <app-list-qns class="col s6"></app-list-qns>
-  </div>
+      <!-- <app-add-qns class="col s6"></app-add-qns>
+      <app-list-qns class="col s6"></app-list-qns> -->
+      <nav>
+        <a routerLink='home' routerLinkActive='active' >Home</a>
+        <a routerLink='quiz' routerLinkActive='active' >Quiz</a>
+      </nav>
+
+      <router-outlet></router-outlet>
+
+    </div>
 </div>

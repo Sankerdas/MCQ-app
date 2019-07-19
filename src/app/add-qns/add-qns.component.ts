@@ -9,14 +9,14 @@ import { QnsService } from '../shared/qns.service';
 export class AddQnsComponent implements OnInit {
 
   onSubmit() {
-    const data = this.qnsService.form.value;
+    const data = this.qnsService.form.value; // gettin form values
     this.qnsService.insQns(data);
   }
 
   constructor( public qnsService: QnsService ) { }
 
   ngOnInit() {
-    /// this.qnsService.form.valueChanges.subscribe(console.log); // log the form input
+     this.qnsService.form.valueChanges.subscribe(console.log); // log the form input
   }
 
 }

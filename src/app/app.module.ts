@@ -12,13 +12,19 @@ import { environment } from 'src/environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule } from '@angular/router';
+import { QuizMainComponent } from './quiz-main/quiz-main.component';
+import { HomeComponent } from './home/home.component';
+
+import appRoutes from './routerConfig';
 
 @NgModule({
   declarations: [
     AppComponent,
     AddQnsComponent,
-    ListQnsComponent
+    ListQnsComponent,
+    QuizMainComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +32,8 @@ import { RouterModule, Routes } from '@angular/router';
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
-    RouterModule
+    RouterModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [QnsService],
   bootstrap: [AppComponent]
