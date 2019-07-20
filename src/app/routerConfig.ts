@@ -1,11 +1,9 @@
 import { AppComponent } from './app.component';
-import { AddQnsComponent } from './add-qns/add-qns.component';
-import { ListQnsComponent } from './list-qns/list-qns.component';
 import { QuizMainComponent } from './quiz-main/quiz-main.component';
 import { HomeComponent } from './home/home.component';
+import { DashComponent } from './dash/dash.component';
 
 import { Routes } from '@angular/router';
-import { Component } from '@angular/core';
 
 const appRoutes: Routes = [
     {
@@ -16,6 +14,10 @@ const appRoutes: Routes = [
         path: 'quiz',
         component: QuizMainComponent
     },
+    {
+      path: 'dash',
+      component: DashComponent
+    }
 
 ];
 

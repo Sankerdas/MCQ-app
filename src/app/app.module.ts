@@ -17,6 +17,7 @@ import { QuizMainComponent } from './quiz-main/quiz-main.component';
 import { HomeComponent } from './home/home.component';
 
 import appRoutes from './routerConfig';
+import { DashComponent } from './dash/dash.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import appRoutes from './routerConfig';
     AddQnsComponent,
     ListQnsComponent,
     QuizMainComponent,
-    HomeComponent
+    HomeComponent,
+    DashComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { QnsService } from '../shared/qns.service';
+
 
 @Component({
   selector: 'app-quiz-main',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuizMainComponent implements OnInit {
 
-  constructor() { }
+  constructor(public qnsService: QnsService) { }
+
+  qzQns: any;
+
+  getQuizQns = () => {
+    this.qnsService.getQns().subscribe(res => (this.qzQns = res));
+  }
 
   ngOnInit() {
+    this.getQuizQns();
   }
 
 }
