@@ -1,3 +1,18 @@
 .qzCls {
   padding: 20px;
 }
+
+.card-action a{
+  cursor: pointer;
+}
+
+.card-action a span {
+  border: solid 2px;
+  padding: 0px 5px;
+  color: black;
+  font-size: 12px;
+}
+
+.disable {
+  pointer-events: none;
+}

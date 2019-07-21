@@ -10,7 +10,7 @@
   <th>Answer</th>
   </tr>
   <tr *ngFor='let qns of qnsList;  let i = index;'>
-    <td>{{i}}</td>
+    <td>{{i+1}}</td>
     <td>{{qns.payload.doc.data().qn}}</td>
     <td>{{qns.payload.doc.data().opnA}}</td>
     <td>{{qns.payload.doc.data().opnB}}</td>
