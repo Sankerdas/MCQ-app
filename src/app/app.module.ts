@@ -18,6 +18,7 @@ import { HomeComponent } from './home/home.component';
 
 import appRoutes from './routerConfig';
 import { DashComponent } from './dash/dash.component';
+import { AnsLinkDirDirective } from './ans-link-dir.directive';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { DashComponent } from './dash/dash.component';
     ListQnsComponent,
     QuizMainComponent,
     HomeComponent,
-    DashComponent
+    DashComponent,
+    AnsLinkDirDirective
   ],
   imports: [
     BrowserModule,

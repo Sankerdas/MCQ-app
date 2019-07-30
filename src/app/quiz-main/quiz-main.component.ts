@@ -14,14 +14,14 @@ export class QuizMainComponent implements OnInit {
   qzQns: any;
   C = 0;
   W = 0;
-
+  rslt: any;
 
   getQuizQns = () => {
     this.qnsService.getQns().subscribe(res => (this.qzQns = res));
   }
 
 
-  qzCkeck = (data, opn, id) => {
+  qzCkeck = (data, opn) => {
 
     if (data.ans === opn ) {
       this.C++;
@@ -36,8 +36,8 @@ export class QuizMainComponent implements OnInit {
   }
 
   qzResult = () => {
-    console.log('Wrong ' + this.W);
-    console.log('Correct ' + this.C);
+    this.rslt = ' Correct Answer(s) ' + this.C + ' Wrong Answer(s) ' + this.W;
+    console.log(this.rslt);
   }
 
 
