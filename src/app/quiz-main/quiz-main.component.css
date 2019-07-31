@@ -16,3 +16,14 @@
 .disable {
   pointer-events: none;
 }
+
+.tmeDiv {
+  position: fixed;
+  bottom: 22px;
+  right: 23px;
+  background: #1F2831;
+  color: #fff;
+  opacity: .8;
+  border-radius: 5px;
+  padding: 5px;
+}
