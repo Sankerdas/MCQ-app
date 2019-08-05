@@ -1,25 +1,26 @@
 <div class="container" >
+    <a (click)="qzStart()" *ngIf="qzShow == false" class="waves-effect waves-light btn purple">Start Quiz</a>
 
-<div class="row">
-  <div class="col s12 m12" *ngFor="let qz of qzQns; let i = index;" [id]="i+1 + '_qzID'" >
+<div class="row" *ngIf="qzShow == true" >
+  <div class="col s12 m12" *ngFor="let qz of qzQns; let i = index;" [id]="i+1 + '_qzID'"  >
     <div class="card  teal darken-4">
       <div class="card-content white-text">
         <span class="card-title" > {{ i+1 }} {{  qz.payload.doc.data().qn }}</span>
         <p></p>
       </div>
       <div class="card-action">
-          <a (click)="qzCkeck(qz.payload.doc.data(),'A')" appAnsLinkDir> <span>A</span>  {{ qz.payload.doc.data().opnA }}</a>
-          <a (click)="qzCkeck(qz.payload.doc.data(),'B')" appAnsLinkDir> <span>B</span>  {{ qz.payload.doc.data().opnB }}</a>
-          <a (click)="qzCkeck(qz.payload.doc.data(),'C')" appAnsLinkDir> <span>C</span>  {{ qz.payload.doc.data().opnC }}</a>
-          <a (click)="qzCkeck(qz.payload.doc.data(),'D')" appAnsLinkDir> <span>D</span>  {{ qz.payload.doc.data().opnD }}</a>
+        <a (click)="qzCkeck(qz.payload.doc.data(),'A')" appAnsLinkDir> <span>A</span>  {{ qz.payload.doc.data().opnA }}</a>
+        <a (click)="qzCkeck(qz.payload.doc.data(),'B')" appAnsLinkDir> <span>B</span>  {{ qz.payload.doc.data().opnB }}</a>
+        <a (click)="qzCkeck(qz.payload.doc.data(),'C')" appAnsLinkDir> <span>C</span>  {{ qz.payload.doc.data().opnC }}</a>
+        <a (click)="qzCkeck(qz.payload.doc.data(),'D')" appAnsLinkDir> <span>D</span>  {{ qz.payload.doc.data().opnD }}</a>
       </div>
     </div>
   </div>
   <a (click)="qzResult()" class="waves-effect waves-light btn">Result</a>
-  
+
   <h4>{{ rslt }}</h4>
 
-  <h5 class="tmeDiv">Time <br/> <span>  {{ minute }} : {{ second }} </span></h5>    
+  <h5 class="tmeDiv">Time <br/> <span>  {{ minute }} : {{ second }} </span></h5>
 
 </div>
 

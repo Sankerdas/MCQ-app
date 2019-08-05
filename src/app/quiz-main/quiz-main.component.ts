@@ -16,9 +16,15 @@ export class QuizMainComponent implements OnInit {
   rslt: any;
   second = 0; minute = 0;
   tRun = true;
+  qzShow = false;
 
   getQuizQns = () => {
     this.qnsService.getQns().subscribe(res => (this.qzQns = res));
+  }
+
+  qzStart = () => {
+    this.qzShow = true;
+    this.callTime();
   }
 
   qzCkeck = (data, opn) => {
@@ -34,7 +40,6 @@ export class QuizMainComponent implements OnInit {
   qzResult = () => {
     this.rslt = ' Correct Answer(s) ' + this.C + ' Wrong Answer(s) ' + this.W;
     this.tRun = false;
-    console.log(this.rslt);
   }
 
   add = () => {
@@ -54,7 +59,6 @@ export class QuizMainComponent implements OnInit {
 
   ngOnInit() {
     this.getQuizQns();
-    this.callTime();
   }
 
 
