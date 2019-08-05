@@ -16,7 +16,7 @@ import { RouterModule } from '@angular/router';
 import { QuizMainComponent } from './quiz-main/quiz-main.component';
 import { HomeComponent } from './home/home.component';
 
-import appRoutes from './routerConfig';
+import { appRoutes } from './routerConfig';
 import { DashComponent } from './dash/dash.component';
 import { AnsLinkDirDirective } from './ans-link-dir.directive';
 
@@ -36,7 +36,6 @@ import { AnsLinkDirDirective } from './ans-link-dir.directive';
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
-    RouterModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [QnsService],

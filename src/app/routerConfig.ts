@@ -1,11 +1,13 @@
-import { AppComponent } from './app.component';
-import { QuizMainComponent } from './quiz-main/quiz-main.component';
-import { HomeComponent } from './home/home.component';
-import { DashComponent } from './dash/dash.component';
 
 import { Routes } from '@angular/router';
 
-const appRoutes: Routes = [
+import { QuizMainComponent } from './quiz-main/quiz-main.component';
+import { HomeComponent } from './home/home.component';
+import { DashComponent } from './dash/dash.component';
+import { AppComponent } from './app.component';
+
+
+export const appRoutes: Routes = [
     {
         path: 'home',
         component: HomeComponent
@@ -21,4 +23,3 @@ const appRoutes: Routes = [
 
 ];
 
-export default appRoutes;
