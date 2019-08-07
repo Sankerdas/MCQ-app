@@ -19,8 +19,8 @@
 
 .tmeDiv {
   position: fixed;
-  bottom: 22px;
-  right: 23px;
+  top: 5px;
+  right: 20px;
   background: #1F2831;
   color: #fff;
   opacity: .8;

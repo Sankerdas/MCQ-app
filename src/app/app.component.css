@@ -3,6 +3,14 @@
 }
 
 .active {
-    background: greenyellow
+    background: #007eff
+}
+
+a {
+    color: #fff;
+    margin: 15px;
+    border: solid black;
+    padding: 5px;
+    font-size: 18px;
 }
 
