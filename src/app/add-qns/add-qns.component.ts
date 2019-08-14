@@ -10,6 +10,7 @@ export class AddQnsComponent implements OnInit {
 
   onSubmit() {
     const data = this.qnsService.form.value; // gettin form values
+    console.log(data);
     this.qnsService.insQns(data);
   }
 
